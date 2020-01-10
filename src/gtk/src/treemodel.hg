@@ -18,6 +18,7 @@
  */
 
 #include <glibmm/interface.h>
+#include <glibmm/arrayhandle.h>
 #include <gtkmm/treeiter.h>
 
 _DEFS(gtkmm,gtk)
@@ -26,6 +27,7 @@ _PINCLUDE(glibmm/private/interface_p.h)
 #m4 _PUSH(SECTION_CC_PRE_INCLUDES)
 //Include this before the other headers, such as treeiter.h,
 //so that the undef in GdkRegion is used.
+#include <glibmm/listhandle.h>
 #include <gtkmm/treepath.h>
 #m4 _POP()
 

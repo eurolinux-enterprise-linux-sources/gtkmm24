@@ -4,12 +4,11 @@
 %global api_ver 2.4
 
 Name:           gtkmm24
-Version:        2.24.2
-Release:        8%{?dist}
+Version:        2.24.5
+Release:        1%{?dist}
 
 Summary:        C++ interface for GTK2 (a GUI library for X)
 
-Group:          System Environment/Libraries
 License:        LGPLv2+
 URL:            http://www.gtkmm.org/
 Source0:        http://ftp.gnome.org/pub/GNOME/sources/gtkmm/%{release_version}/gtkmm-%{version}.tar.xz
@@ -30,8 +29,7 @@ quickly create complex user interfaces.
 
 %package        devel
 Summary:        Headers for developing programs that will use %{name}.
-Group:          Development/Libraries
-Requires:       %{name} = %{version}-%{release}
+Requires:       %{name}%{_isa} = %{version}-%{release}
 Requires:       gtk2-devel
 Requires:       glibmm24-devel
 Requires:       atkmm-devel
@@ -46,7 +44,6 @@ developing gtkmm applications.
 
 %package        docs
 Summary:        Documentation for %{name}, includes full API docs
-Group:          Documentation
 BuildArch:      noarch
 Requires:       %{name} = %{version}-%{release}
 Requires:       glibmm24-doc
@@ -80,7 +77,8 @@ find $RPM_BUILD_ROOT -type f -name "*.la" -exec rm -f {} ';'
 
 
 %files
-%doc AUTHORS COPYING NEWS README
+%license COPYING
+%doc AUTHORS NEWS README
 %{_libdir}/*.so.*
 
 
@@ -100,6 +98,10 @@ find $RPM_BUILD_ROOT -type f -name "*.la" -exec rm -f {} ';'
 %doc %{_datadir}/devhelp/
 
 %changelog
+* Mon Sep 05 2016 Kalev Lember <klember@redhat.com> - 2.24.5-1
+- Update to 2.24.5
+- Resolves: #1425963
+
 * Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 2.24.2-8
 - Mass rebuild 2014-01-24
 

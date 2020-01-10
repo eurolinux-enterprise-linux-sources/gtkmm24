@@ -11,7 +11,7 @@
 #define GDKMM_MAJOR_VERSION 2
 
 /* Micro version number of gdkmm. */
-#define GDKMM_MICRO_VERSION 2
+#define GDKMM_MICRO_VERSION 5
 
 /* Minor version number of gdkmm. */
 #define GDKMM_MINOR_VERSION 24
