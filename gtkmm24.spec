@@ -5,8 +5,7 @@
 
 Name:           gtkmm24
 Version:        2.24.2
-Release:        6%{?dist}
-Epoch:          1
+Release:        8%{?dist}
 
 Summary:        C++ interface for GTK2 (a GUI library for X)
 
@@ -32,7 +31,7 @@ quickly create complex user interfaces.
 %package        devel
 Summary:        Headers for developing programs that will use %{name}.
 Group:          Development/Libraries
-Requires:       %{name} = %{epoch}:%{version}-%{release}
+Requires:       %{name} = %{version}-%{release}
 Requires:       gtk2-devel
 Requires:       glibmm24-devel
 Requires:       atkmm-devel
@@ -49,7 +48,7 @@ developing gtkmm applications.
 Summary:        Documentation for %{name}, includes full API docs
 Group:          Documentation
 BuildArch:      noarch
-Requires:       %{name} = %{epoch}:%{version}-%{release}
+Requires:       %{name} = %{version}-%{release}
 Requires:       glibmm24-doc
 
 %description    docs
@@ -81,7 +80,7 @@ find $RPM_BUILD_ROOT -type f -name "*.la" -exec rm -f {} ';'
 
 
 %files
-%doc AUTHORS ChangeLog COPYING NEWS README
+%doc AUTHORS COPYING NEWS README
 %{_libdir}/*.so.*
 
 
@@ -101,11 +100,18 @@ find $RPM_BUILD_ROOT -type f -name "*.la" -exec rm -f {} ';'
 %doc %{_datadir}/devhelp/
 
 %changelog
-* Thu May 23 2013 Matthias Clasen <mclasen@redhat.com> - 1:2.24.2-6
-- Fix inter-subpackage dependencies for the epoch
+* Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 2.24.2-8
+- Mass rebuild 2014-01-24
 
-* Wed May 22 2013 Matthias Clasen <mclasen@redhat.com> - 1:2.24.2-2
-- Go back to 2.24.2, the .3 tarball is broken
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 2.24.2-7
+- Mass rebuild 2013-12-27
+
+* Fri Jun 21 2013 Kalev Lember <kalevlember@gmail.com> - 2.24.2-6
+- Revert back to 2.24.2 for F19 as per upstream's recommendation
+  (#961087, #963909)
+
+* Fri Jun 21 2013 Matthias Clasen <mclasen@redhat.com> - 2.24.3-2
+- Don't install ChangeLog
 
 * Fri Apr 05 2013 Kalev Lember <kalevlember@gmail.com> - 2.24.3-1
 - Update to 2.24.3
